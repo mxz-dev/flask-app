@@ -4,7 +4,7 @@ auth = Blueprint("auth",__name__)
 
 @auth.route("/sign-in")
 def sign_in():
-        return render_template('signin.html')
+    return render_template('signin.html')
 
 @auth.route("/sign-up")
 def sign_up():
