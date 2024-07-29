@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %} Sign In Page {% endblock %}
+{% block navbar_items %}
+<li class="nav-item ">
+    <a class="nav-link" href="/sign-up">Sign Up</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="/sign-in">Sign In</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+{% block container %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2 class="text-center mt-5">Sign In</h2>
+      <form method="POST">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Sign In</button>
+      </form>
+      <div class="text-center mt-3">
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
