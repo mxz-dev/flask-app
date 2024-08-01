@@ -27,7 +27,7 @@ def sign_in():
                     flash("Password or Username is incorrect.", category='error')
 
 
-    return render_template('signin.html')
+    return render_template('signin.html',user=current_user)
 
 @auth.route("/sign-up", methods=['GET','POST'])
 def sign_up():
@@ -56,10 +56,10 @@ def sign_up():
             return redirect(url_for('views.home'))
              
 
-    return render_template('signup.html')
+    return render_template('signup.html',user=current_user)
 
 @auth.route("/sign-out")
 @login_required
 def sign_out():
     logout_user()
-    return redirect(url_for("auth.sign_in"))
+    return redirect(url_for("auth.sign_in"), user=current_user)
