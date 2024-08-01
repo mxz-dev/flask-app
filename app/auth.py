@@ -27,7 +27,7 @@ def sign_in():
                     flash("Password or Username is incorrect.", category='error')
 
 
-    return render_template('signin.html',user=current_user)
+    return render_template('signin.html',user=current_user  )
 
 @auth.route("/sign-up", methods=['GET','POST'])
 def sign_up():
