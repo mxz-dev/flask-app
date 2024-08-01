@@ -16,8 +16,10 @@ def sign_up():
         username = data.get('username')
         fpassword = data.get('password')
         passwordConfirm = data.get('passwordConfirm')
-        
-        if len(fullName) < 2:
+        user = Users.query.filter_by(username=username).first()
+        if user:
+            flash("username is already exists try aother one.", category="error")
+        elif len(fullName) < 2:
             flash("FullName must be greather than 1 charachter.", category="error")
         elif len(username) < 3:
             flash("username must be greather than 2 charachters.", category="error")
