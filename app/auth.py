@@ -62,4 +62,4 @@ def sign_up():
 @login_required
 def sign_out():
     logout_user()
-    return redirect(url_for("auth.sign_in"), user=current_user)
+    return redirect(url_for("auth.sign_in"))

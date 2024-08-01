@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 {% block title %}
-    Home Page
+    Note Taking.
 {% endblock %}
-    
+{% block container %}
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush">
+    {% for note in user.notes %}
+    <li class="list-group-item">
+        {{ note.data }}
+    </li>
+    <button type="button" class="close" onclick="deleteNote({{ note.id }})">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    {% endfor %}
+</ul>
+<form method="POST">
+    <div class="form-group mt-4">
+        <label for="Note">New Note:</label>
+        <textarea id="Note" class="form-control" name="note" aria-label="Note" placeholder="Write a new Note..."></textarea>
+        <button class="btn btn-primary mt-2"  type="submit">
+            Add
+        </button>
+    </div>
+  </form>
+{% endblock %}
